@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/diff_layout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"></LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:id="@+id/okBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:background="@color/actionBarColor"
+            android:padding="5dp"
+            android:text="生成二维码"
+            android:textColor="@color/actionBarTextColor" />
+
+        <ImageView
+            android:id="@+id/qrCode"
+            android:layout_below="@id/okBtn"
+            android:layout_width="126dp"
+            android:layout_centerHorizontal="true"
+            android:scaleType="centerCrop"
+            android:background="@color/actionBarColor"
+            android:layout_height="126dp"
+            android:layout_marginTop="10dp" />
+
+    </RelativeLayout>
+</LinearLayout>
