@@ -3,8 +3,12 @@ package com.xyc.hasee.qrcode;
 import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -31,7 +35,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private TextView net_tv, project_tv, okBtn, img_tv, card_tv, phone_tv, email_tv, txt_tv, msg_tv, file_tv, wifi_tv, location_tv, active_tv;
     private ImageView qrCode;
     private String retval;
-    private String s_tv;
+    private EditText net_content;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +49,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public String getNetDatas(String s) {
         OkHttpClient mClient = new OkHttpClient();
         final Request request = new Request.Builder()
-                .url(String.format(UrlUtils.net_url, s))
+                .url(UrlUtils.net_url + s + UrlUtils.net_url_type)
                 .build();
         Call call = mClient.newCall(request);
         call.enqueue(new Callback() {
@@ -91,7 +95,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         msg_tv.setOnClickListener(this);
         wifi_tv.setOnClickListener(this);
         okBtn.setOnClickListener(this);
-        initNetDatas();
+
     }
 
     @Override
@@ -100,7 +104,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.careBtn:
                 break;
             case R.id.okBtn:
-                setNetDatas();
+                String url_data = net_content.getText().toString().trim();
+                if (url_data.length() != 0) {
+                    String netDatas = getNetDatas(url_data);
+                    if (netDatas != null) {
+                        Picasso.with(mContext).load(UrlUtils.img_header + netDatas).into(qrCode);
+                    }
+                }
                 break;
             case R.id.net_tv:
                 initNetDatas();
@@ -122,19 +132,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-    private void setNetDatas() {
-        String netDatas = getNetDatas(s_tv);
-        if (netDatas != null) {
-            Picasso.with(mContext).load(UrlUtils.img_header + netDatas).into(qrCode);
-        }
-    }
-
     private void initNetDatas() {
         LinearLayout diff_layout = (LinearLayout) findViewById(R.id.diff_layout);
         View net_view = LayoutInflater.from(mContext).inflate(R.layout.net_layout, null);
-        EditText net_content = (EditText) net_view.findViewById(R.id.net_content);
-        s_tv = net_content.getText().toString();
+        ViewGroup.LayoutParams params = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+        net_content = (EditText) net_view.findViewById(R.id.net_content);
+        net_view.setLayoutParams(params);
         diff_layout.addView(net_view);
+
     }
 
     @Override
