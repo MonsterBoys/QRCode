@@ -36,13 +36,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ImageView qrCode;
     private String retval;
     private EditText net_content;
-
+    private  boolean isInitNet=false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         YouMiUtils.initYoumi(mContext);
-
         initView();
     }
 
@@ -104,11 +103,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.careBtn:
                 break;
             case R.id.okBtn:
-                String url_data = net_content.getText().toString().trim();
-                if (url_data.length() != 0) {
-                    String netDatas = getNetDatas(url_data);
-                    if (netDatas != null) {
-                        Picasso.with(mContext).load(UrlUtils.img_header + netDatas).into(qrCode);
+                Log.d("xyc", "onClick: ="+"1");
+                if(isInitNet){
+                    String url_data = net_content.getText().toString().trim();
+                    if (url_data.length() != 0) {
+                        String netDatas = getNetDatas(url_data);
+                        if (netDatas != null) {
+                            Log.d("xyc", "onClick: ="+"2");
+                            Picasso.with(mContext).load(UrlUtils.img_header + netDatas).into(qrCode);
+                        }
                     }
                 }
                 break;
@@ -139,7 +142,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         net_content = (EditText) net_view.findViewById(R.id.net_content);
         net_view.setLayoutParams(params);
         diff_layout.addView(net_view);
-
+        isInitNet=true;
     }
 
     @Override
