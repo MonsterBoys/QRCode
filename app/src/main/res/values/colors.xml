@@ -7,4 +7,7 @@
     <color name="actionBarTextColor">#FF454E1A</color>
     <color name="main_bg_clor">#FF87973A</color>
     <color name="main_white">#FFFFFFFF</color>
+    <color name="color1">#7FFFFFFF</color>
+    <color name="color2">#7f696969</color>
+    <color name="color3">#7FFFFFFF</color>
 </resources>
