@@ -10,14 +10,14 @@
         android:id="@+id/actionBar_rl"
         android:layout_width="match_parent"
         android:layout_height="?actionBarSize"
-        android:background="@color/actionBarColor">
+        android:background="@color/colorPrimaryDark">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:text="二维码生成"
-            android:textColor="@color/actionBarTextColor"
+            android:textColor="@color/main_white"
             android:textSize="18sp" />
 
         <ImageView
@@ -45,7 +45,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@color/actionBarColor"
+            android:background="@drawable/selector_btn_tab"
             android:gravity="center"
             android:text="网址码" />
 
@@ -55,27 +55,16 @@
             android:layout_height="match_parent"
             android:layout_marginLeft="3dp"
             android:layout_weight="1"
-            android:background="@color/actionBarColor"
+            android:background="@drawable/selector_btn_tab"
             android:gravity="center"
             android:text="产品码" />
-
-      <!--  <TextView
-            android:id="@+id/img_tv"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="3dp"
-            android:layout_weight="1"
-            android:background="@color/actionBarColor"
-            android:gravity="center"
-            android:text="图片码" />-->
-
         <TextView
             android:id="@+id/card_tv"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginLeft="3dp"
             android:layout_weight="1"
-            android:background="@color/actionBarColor"
+            android:background="@drawable/selector_btn_tab"
             android:gravity="center"
             android:text="名片码" />
 
@@ -85,7 +74,7 @@
             android:layout_height="match_parent"
             android:layout_marginLeft="3dp"
             android:layout_weight="1"
-            android:background="@color/actionBarColor"
+            android:background="@drawable/selector_btn_tab"
             android:gravity="center"
             android:text="电话码" />
 
@@ -107,7 +96,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@color/actionBarColor"
+            android:background="@drawable/selector_btn_tab"
             android:gravity="center"
             android:text="文本码" />
 
@@ -117,19 +106,9 @@
             android:layout_height="match_parent"
             android:layout_marginLeft="3dp"
             android:layout_weight="1"
-            android:background="@color/actionBarColor"
+            android:background="@drawable/selector_btn_tab"
             android:gravity="center"
             android:text="短信码" />
-
-       <!-- <TextView
-            android:id="@+id/file_tv"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="3dp"
-            android:layout_weight="1"
-            android:background="@color/actionBarColor"
-            android:gravity="center"
-            android:text="文件码" />-->
 
         <TextView
             android:id="@+id/wifi_tv"
@@ -137,7 +116,7 @@
             android:layout_height="match_parent"
             android:layout_marginLeft="3dp"
             android:layout_weight="1"
-            android:background="@color/actionBarColor"
+            android:background="@drawable/selector_btn_tab"
             android:gravity="center"
             android:text="WIFI码" />
         <TextView
@@ -146,28 +125,9 @@
             android:layout_height="match_parent"
             android:layout_marginLeft="3dp"
             android:layout_weight="1"
-            android:background="@color/actionBarColor"
+            android:background="@drawable/selector_btn_tab"
             android:gravity="center"
             android:text="E-Mail" />
-     <!--   <TextView
-            android:id="@+id/location_tv"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="3dp"
-            android:layout_weight="1"
-            android:background="@color/actionBarColor"
-            android:gravity="center"
-            android:text="位置码" />-->
-
-      <!--  <TextView
-            android:id="@+id/active_tv"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="3dp"
-            android:layout_weight="1"
-            android:background="@color/actionBarColor"
-            android:gravity="center"
-            android:text="活码" />-->
     </LinearLayout>
 
     <LinearLayout

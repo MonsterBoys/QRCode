@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+<TextView
+    android:text="未检测到系统语音包,使用前您可以先下载一个百度语音助手或其他语音辅助软件,以便您更好的使用本软件。"
+    android:layout_width="match_parent"
+    android:paddingLeft="10dp"
+    android:textSize="13sp"
+    android:textColor="@color/colorPrimaryDark"
+    android:paddingRight="10dp"
+    android:layout_height="wrap_content" />
+</LinearLayout>

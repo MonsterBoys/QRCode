@@ -54,12 +54,11 @@
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         android:textSize="18sp" />
-
 </LinearLayout>
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp">
+        android:layout_marginTop="20dp">
 
         <TextView
             android:id="@+id/okBtn"
